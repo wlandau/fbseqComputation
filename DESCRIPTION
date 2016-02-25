@@ -1,0 +1,64 @@
+Package: fbseqComputation
+Title: fbseqComputation
+Description: Reproduces the results of the computation paper using packages
+    fbseq and fbseqCUDA.
+Version: 0.0
+Author: Will Landau <will.landau@gmail.com>
+Maintainer: Will Landau <will.landau@gmail.com>
+Depends:
+    R (>= 3.0.0),
+    fbseq,
+    ggplot2
+Imports:
+    actuar,
+    coda,
+    doMC,
+    doParallel,
+    plyr,
+    dplyr,
+    edgeR,
+    foreach,
+    ggthemes,
+    gridExtra,
+    hexbin,
+    methods,
+    parallel,
+    pracma,
+    reshape2,
+    snowfall,
+    xtable
+Suggests:
+    fbseqCUDA,
+    knitr
+VignetteBuilder: knitr
+License: GPL (>= 3)
+Collate:
+    'analyze-ess.R'
+    'analyze-gelman.R'
+    'analyze-ggplot2_df.R'
+    'analyze-plot_runtime.R'
+    'analyze-runtime.R'
+    'fit_fbseq.R'
+    'fit.R'
+    'namespace.R'
+    'study-real_init.R'
+    'study-real_mcmc.R'
+    'study-computation_init.R'
+    'study-computation_mcmc.R'
+    'paper_computation.R'
+    'simulation_paschold.R'
+    'simulation_duplicated.R'
+    'simulation.R'
+    'study-computation_analyze.R'
+    'study-real_analyze.R'
+    'util-analyses.R'
+    'util-dir.R'
+    'util-logfiles.R'
+    'util-meta.R'
+    'util-myproctime.R'
+    'util-myrelevel.R'
+    'util-mytheme.R'
+    'util-over.R'
+    'util-progress.R'
+    'util-relevel_heterosis.R'
+RoxygenNote: 5.0.1

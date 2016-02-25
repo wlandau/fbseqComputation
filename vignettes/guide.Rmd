@@ -1,0 +1,74 @@
+---
+title: "`fbseqComputation` package installation and usage guide"
+author: Will Landau
+date: 2015
+bibliography: bibliography.bib
+output: 
+  rmarkdown::html_vignette:
+    number_sections: true
+    toc: true
+vignette: >
+  \VignetteEngine{knitr::rmarkdown}
+  \VignetteIndexEntry{`fbseqComputation` package installation and usage guide}
+  \usepackage[utf8]{inputenc}
+---
+
+# Purpose
+
+`fbseqComputation` reproduces the results of Section 5 ("Assessing computational tractability") of a paper entitled "A fully Bayesian strategy for high-dimensional hierarchical modeling using massively parallel computing" by Will Landau and Dr. Jarad Niemi. The goal is to assess the computational tractability of `fbseq` and `fbseqCUDA` using a real RNA-seq dataset [@paschold] and a simulation study based off this dataset. See the original paper for details.
+
+# System requirements
+
+- Mac OS X or Linux. 
+- R $\ge$ 3.2.0
+- R packages `methods`, `parallel`, `snowfall`, `doMC`, `ggplot2`, `pracma`, `plyr`, `reshape2`, and `knitr`, available though the [Comprehensive R Archive Network (CRAN](https://cran.r-project.org/).
+- The R package `edgeR`, available through [Bioconductor](http://bioconductor.org/). 
+- A CUDA-enabled NVIDIA graphics processing unit (GPU) with compute capability 2.0 or greater.
+- CUDA version 6.0 or greater.
+- The `fbseq` and `fbseqCUDA` packages, available on GitHub. See the vignettes for installation and usage instructions.
+
+More information about CUDA is available through [NVIDIA](http://www.nvidia.com/object/cuda_home_new.html). If your computer does not have these features, you can rent GPU time from [cloud computing enterprises](http://www.nvidia.com/object/gpu-cloud-computing-services.html) such as [Amazon Web Services](http://aws.amazon.com/ec2/instance-types/). See the installation vignettes for the `fbseq` and `fbseqCUDA` packages for installation details about those packages.
+
+# Installation
+
+## Option 1: install a stable release (recommended).
+
+Navigate to a [list of stable releases](https://github.com/wlandau/fbseqComputation/releases) on the project's [GitHub page](https://github.com/wlandau/fbseqComputation). Download the desired `tar.gz` bundle, then install it either with `install.packages(..., repos = NULL, type="source")` from within R  `R CMD INSTALL` from the Unix/Linux command line.
+
+## Option 2: use `install_github` to install the development version.
+
+For this option, you need the `devtools` package, available from CRAN or GitHub. Open R and run 
+
+```{r, eval=F}
+library(devtools)
+install_github("wlandau/fbseqComputation")
+```
+
+## Option 3: build the development version from the source.
+
+Open a command line program such as Terminal in Mac/Linux and enter the following commands.
+
+```
+git clone git@github.com:wlandau/fbseqComputation.git
+R CMD build fbseqComputation
+R CMD INSTALL ...
+```
+
+where `...` is replaced by the name of the tarball produced by `R CMD build`. 
+
+# Run `paper_computation()` to reproduce the analysis
+
+The function `paper_computation()` reproduces the computational results of Section 5 (Assessing computational tractability) of "A fully Bayesian strategy for high-dimensional hierarchical modeling using massively parallel computing" by Will Landau and Dr. Jarad Niemi. Internally, `paper_computation()` runs the following functions.
+
+- `real_mcmc()`, which runs the Markov chain Monte Carlo procedure on the @paschold dataset and outputs the raw computation to a folder called `real_mcmc`. This function should take a few hours.
+- `computation_mcmc()`, which runs the Markov chain Monte Carlo procedure on the simulated datasets described in Section 5.1 ("The scaling of performance with the size of the data"), outputting the raw computation to a folder called `computation_mcmc`. This function should take a few days to run.
+- `real_analyze()`, which uses the raw computation output in the `real_mcmc` folder to extract the results of Section 5 pertaining to the @paschold dataset and put them in a folder called `real_analyze`. Gelman-Rubin potential scale reduction factors are in `real_analyze/gelman/gelman.rds`, effective sample size information is in an RDS file in  `real_analyze/ess/ess.rds`, and a table of runtimes is in an RDS file in  `real_analyze/runtime/runtime.rds`. RDS files are raw R objects, which can be read into R with the `readRDS()` function.
+- `computation_analyze()`, which uses the raw computation output in the `computation_mcmc` folder to extract the results of Section 5 pertaining to the simulated datasets and put them in a folder called `computation_analyze`. Gelman-Rubin potential scale reduction factors are in `computation_analyze/gelman/gelman.rds`, effective sample size information is in an RDS file in  `computation_analyze/ess/ess.rds`, and a table of runtimes is in an RDS file in  `computation_analyze/runtime/runtime.rds`. RDS files are raw R objects, which can be read into R with the `readRDS()` function.
+
+For further control during the computation, the user may run any of the above functions individually. `real_mcmc()` and `computation_mcmc()` do not have to be run completely through in a single run, as they do not overwrite existing completed Markov chain Monte Carlo (MCMC) runs in the `real_mcmc` and `computation_mcmc` folders, respectively. To see which MCMCs analyses are completed so far, run `progress("real_mcmc")` or `progress("computation_mcmc")`.
+
+# References
+
+For even finer-grained control, see the manual and help files.
+
+
