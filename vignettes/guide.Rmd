@@ -65,10 +65,8 @@ The function `paper_computation()` reproduces the computational results of Secti
 - `real_analyze()`, which uses the raw computation output in the `real_mcmc` folder to extract the results of Section 5 pertaining to the @paschold dataset and put them in a folder called `real_analyze`. Gelman-Rubin potential scale reduction factors are in `real_analyze/gelman/gelman.rds`, effective sample size information is in an RDS file in  `real_analyze/ess/ess.rds`, and a table of runtimes is in an RDS file in  `real_analyze/runtime/runtime.rds`. RDS files are raw R objects, which can be read into R with the `readRDS()` function.
 - `computation_analyze()`, which uses the raw computation output in the `computation_mcmc` folder to extract the results of Section 5 pertaining to the simulated datasets and put them in a folder called `computation_analyze`. Gelman-Rubin potential scale reduction factors are in `computation_analyze/gelman/gelman.rds`, effective sample size information is in an RDS file in  `computation_analyze/ess/ess.rds`, and a table of runtimes is in an RDS file in  `computation_analyze/runtime/runtime.rds`. RDS files are raw R objects, which can be read into R with the `readRDS()` function.
 
-For further control during the computation, the user may run any of the above functions individually. `real_mcmc()` and `computation_mcmc()` do not have to be run completely through in a single run, as they do not overwrite existing completed Markov chain Monte Carlo (MCMC) runs in the `real_mcmc` and `computation_mcmc` folders, respectively. To see which MCMCs analyses are completed so far, run `progress("real_mcmc")` or `progress("computation_mcmc")`.
+For further control during the computation, the user may run any of the above functions individually. `real_mcmc()` and `computation_mcmc()` do not have to be run completely through in a single run, as they do not overwrite existing completed Markov chain Monte Carlo (MCMC) runs in the `real_mcmc` and `computation_mcmc` folders, respectively. To see which MCMCs analyses are completed so far, run `progress("real_mcmc")` or `progress("computation_mcmc")`. For even finer-grained control, see the manual and help files.
 
 # References
-
-For even finer-grained control, see the manual and help files.
 
 

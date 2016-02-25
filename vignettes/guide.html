@@ -67,7 +67,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#option-3-build-the-development-version-from-the-source."><span class="toc-section-number">3.3</span> Option 3: build the development version from the source.</a></li>
 </ul></li>
 <li><a href="#run-paper_computation-to-reproduce-the-analysis"><span class="toc-section-number">4</span> Run <code>paper_computation()</code> to reproduce the analysis</a></li>
-<li><a href="#references"><span class="toc-section-number">5</span> References</a></li>
 </ul>
 </div>
 
@@ -118,12 +117,9 @@ R CMD INSTALL ...</code></pre>
 <li><code>real_analyze()</code>, which uses the raw computation output in the <code>real_mcmc</code> folder to extract the results of Section 5 pertaining to the <span class="citation">Paschold et al. (2012)</span> dataset and put them in a folder called <code>real_analyze</code>. Gelman-Rubin potential scale reduction factors are in <code>real_analyze/gelman/gelman.rds</code>, effective sample size information is in an RDS file in <code>real_analyze/ess/ess.rds</code>, and a table of runtimes is in an RDS file in <code>real_analyze/runtime/runtime.rds</code>. RDS files are raw R objects, which can be read into R with the <code>readRDS()</code> function.</li>
 <li><code>computation_analyze()</code>, which uses the raw computation output in the <code>computation_mcmc</code> folder to extract the results of Section 5 pertaining to the simulated datasets and put them in a folder called <code>computation_analyze</code>. Gelman-Rubin potential scale reduction factors are in <code>computation_analyze/gelman/gelman.rds</code>, effective sample size information is in an RDS file in <code>computation_analyze/ess/ess.rds</code>, and a table of runtimes is in an RDS file in <code>computation_analyze/runtime/runtime.rds</code>. RDS files are raw R objects, which can be read into R with the <code>readRDS()</code> function.</li>
 </ul>
-<p>For further control during the computation, the user may run any of the above functions individually. <code>real_mcmc()</code> and <code>computation_mcmc()</code> do not have to be run completely through in a single run, as they do not overwrite existing completed Markov chain Monte Carlo (MCMC) runs in the <code>real_mcmc</code> and <code>computation_mcmc</code> folders, respectively. To see which MCMCs analyses are completed so far, run <code>progress(&quot;real_mcmc&quot;)</code> or <code>progress(&quot;computation_mcmc&quot;)</code>.</p>
-</div>
-<div id="references" class="section level1">
-<h1><span class="header-section-number">5</span> References</h1>
-<p>For even finer-grained control, see the manual and help files.</p>
+<p>For further control during the computation, the user may run any of the above functions individually. <code>real_mcmc()</code> and <code>computation_mcmc()</code> do not have to be run completely through in a single run, as they do not overwrite existing completed Markov chain Monte Carlo (MCMC) runs in the <code>real_mcmc</code> and <code>computation_mcmc</code> folders, respectively. To see which MCMCs analyses are completed so far, run <code>progress(&quot;real_mcmc&quot;)</code> or <code>progress(&quot;computation_mcmc&quot;)</code>. For even finer-grained control, see the manual and help files.</p>
 <div class="references">
+<h1 id="references" class="unnumbered">References</h1>
 <p>Paschold, Anja, Yi Jia, Caroline Marcon, Steve Lund, Nick B Larson, Cheng-Ting Yeh, Stephan Ossowski, et al. 2012. “Complementation Contributes to Transcriptome Complexity in Maize (<em>Zea Mays L.</em>) Hybrids Relative to Their Inbred Parents.” <em>Genome Research</em> 22 (12). Cold Spring Harbor Lab: 2445–54.</p>
 </div>
 </div>
