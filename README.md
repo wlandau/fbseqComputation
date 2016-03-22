@@ -1,6 +1,6 @@
 # fbseqComputation
 
-`fbseqComputation` reproduces the results of Section 5 ("Assessing computational tractability") of a paper entitled "A fully Bayesian strategy for high-dimensional hierarchical modeling using massively parallel computing" by Will Landau and Dr. Jarad Niemi. The goal is to assess the computational tractability of `fbseq` and `fbseqCUDA` using a real RNA-seq dataset [@paschold] and a simulation study based off this dataset. See the original paper for details.
+`fbseqComputation` is a smaller version of the `fbseqStudies` package, created becase `fbseqStudies` reveals too much too soon. `fbseqComputation` reproduces the results of Section 5 ("Assessing computational tractability") of a paper entitled "A fully Bayesian strategy for high-dimensional hierarchical modeling using massively parallel computing" by Will Landau and Dr. Jarad Niemi. The goal is to assess the computational tractability of `fbseq` and `fbseqCUDA` using a real RNA-seq dataset [@paschold] and a simulation study based off this dataset. See the original paper for details.
 
 # Installation
 
