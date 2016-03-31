@@ -1,6 +1,6 @@
 Package: fbseqComputation
 Title: fbseqComputation
-Description: Reproduces the results of the computation paper using packages
+Description: Reproduces the results of a computation paper using packages
     fbseq and fbseqCUDA.
 Version: 0.0
 Author: Will Landau <will.landau@gmail.com>
