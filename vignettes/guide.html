@@ -12,7 +12,7 @@
 
 <meta name="date" content="2015-01-01" />
 
-<title>fbseqComputation package installation and usage guide</title>
+<title>fbseqComputation package package installation and usage guide</title>
 
 
 
@@ -52,14 +52,14 @@ code > span.er { color: #ff0000; font-weight: bold; }
 
 
 <div id="header">
-<h1 class="title"><code>fbseqComputation</code> package installation and usage guide</h1>
+<h1 class="title"><a href="https://github.com/wlandau/fbseqComputation"><code>fbseqComputation</code> package</a> package installation and usage guide</h1>
 <h4 class="author"><em>Will Landau</em></h4>
 <h4 class="date"><em>2015</em></h4>
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#purpose"><span class="toc-section-number">1</span> Purpose</a></li>
+<li><a href="#fbseqcomputation"><span class="toc-section-number">1</span> fbseqComputation</a></li>
 <li><a href="#system-requirements"><span class="toc-section-number">2</span> System requirements</a></li>
 <li><a href="#installation"><span class="toc-section-number">3</span> Installation</a><ul>
 <li><a href="#option-1-install-a-stable-release-recommended."><span class="toc-section-number">3.1</span> Option 1: install a stable release (recommended).</a></li>
@@ -70,22 +70,18 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul>
 </div>
 
-<div id="purpose" class="section level1">
-<h1><span class="header-section-number">1</span> Purpose</h1>
-<p><code>fbseqComputation</code> reproduces the results of Section 5 (“Assessing computational tractability”) of a paper entitled “A fully Bayesian strategy for high-dimensional hierarchical modeling using massively parallel computing” by Will Landau and Dr. Jarad Niemi. The goal is to assess the computational tractability of <code>fbseq</code> and <code>fbseqCUDA</code> using a real RNA-seq dataset <span class="citation">(Paschold et al. 2012)</span> and a simulation study based off this dataset. See the original paper for details.</p>
+<div id="fbseqcomputation" class="section level1">
+<h1><span class="header-section-number">1</span> fbseqComputation</h1>
+<p><a href="https://github.com/wlandau/fbseqComputation">[<code>fbseqComputation</code> package](<a href="https://github.com/wlandau/fbseqComputation" class="uri">https://github.com/wlandau/fbseqComputation</a>) package</a> is a smaller version of the <a href="https://github.com/wlandau/fbseqStudies"><code>fbseqStudies</code> package</a> package, created becase <a href="https://github.com/wlandau/fbseqStudies"><code>fbseqStudies</code> package</a> reveals too much too soon. <a href="https://github.com/wlandau/fbseqComputation">[<code>fbseqComputation</code> package](<a href="https://github.com/wlandau/fbseqComputation" class="uri">https://github.com/wlandau/fbseqComputation</a>) package</a> reproduces the results of Section 5 (“Assessing computational tractability”) of a paper entitled “A fully Bayesian strategy for high-dimensional hierarchical modeling using massively parallel computing” by Will Landau and Dr. Jarad Niemi. The goal is to assess the computational tractability of <a href="https://github.com/wlandau/fbseq"><code>fbseq</code> package</a> and <a href="https://github.com/wlandau/fbseqCUDA"><code>fbseqCUDA</code> package</a> using a real RNA-seq dataset <span class="citation">(Paschold et al. 2012)</span> and a simulation study based off this dataset. See the original paper for details.</p>
 </div>
 <div id="system-requirements" class="section level1">
 <h1><span class="header-section-number">2</span> System requirements</h1>
 <ul>
-<li>Mac OS X or Linux.</li>
-<li>R <span class="math">\(\ge\)</span> 3.2.0</li>
-<li>R packages <code>methods</code>, <code>parallel</code>, <code>snowfall</code>, <code>doMC</code>, <code>ggplot2</code>, <code>pracma</code>, <code>plyr</code>, <code>reshape2</code>, and <code>knitr</code>, available though the <a href="https://cran.r-project.org/">Comprehensive R Archive Network (CRAN</a>.</li>
-<li>The R package <code>edgeR</code>, available through <a href="http://bioconductor.org/">Bioconductor</a>.</li>
-<li>A CUDA-enabled NVIDIA graphics processing unit (GPU) with compute capability 2.0 or greater.</li>
-<li>CUDA version 6.0 or greater.</li>
-<li>The <code>fbseq</code> and <code>fbseqCUDA</code> packages, available on GitHub. See the vignettes for installation and usage instructions.</li>
+<li>The R version and R packages listed in the “Depends”, “Imports”, and “Suggests” fields of the “package’s <a href="https://github.com/wlandau/fbseqComputation/blob/master/DESCRIPTION">DESCRIPTION</a> file.</li>
+<li>A <a href="http://www.nvidia.com/object/cuda_home_new.html">CUDA</a>-capable <a href="https://developer.nvidia.com/cuda-gpus">NVIDIA graphics processing unit (GPU)</a> with compute capability 2.0 or greater. More information about CUDA is available through <a href="http://www.nvidia.com/">NVIDIA</a>.</li>
+<li><a href="http://www.nvidia.com/object/cuda_home_new.html">CUDA</a> version 6.0 or greater.</li>
+<li>Optional: the code uses double precision values for computation, so GPUs that natively support double precision will be much faster than ones that do not.</li>
 </ul>
-<p>More information about CUDA is available through <a href="http://www.nvidia.com/object/cuda_home_new.html">NVIDIA</a>. If your computer does not have these features, you can rent GPU time from <a href="http://www.nvidia.com/object/gpu-cloud-computing-services.html">cloud computing enterprises</a> such as <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Web Services</a>. See the installation vignettes for the <code>fbseq</code> and <code>fbseqCUDA</code> packages for installation details about those packages.</p>
 </div>
 <div id="installation" class="section level1">
 <h1><span class="header-section-number">3</span> Installation</h1>
