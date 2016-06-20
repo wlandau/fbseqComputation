@@ -20,6 +20,7 @@ Imports:
     edgeR,
     foreach,
     ggthemes,
+    grDevices,
     gridExtra,
     hexbin,
     methods,
@@ -27,6 +28,8 @@ Imports:
     pracma,
     reshape2,
     snowfall,
+    stats,
+    utils,
     xtable
 Suggests:
     fbseqCUDA,
