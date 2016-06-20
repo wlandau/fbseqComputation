@@ -1,6 +1,8 @@
+[![DOI](https://zenodo.org/badge/22809/wlandau/fbseqComputation.svg)](https://zenodo.org/badge/latestdoi/22809/wlandau/fbseqComputation)
+
 # fbseqComputation
 
-[`fbseqComputation` package](https://github.com/wlandau/fbseqComputation) is a smaller version of the [`fbseqStudies` package](https://github.com/wlandau/fbseqStudies) package, created becase [`fbseqStudies` package](https://github.com/wlandau/fbseqStudies) reveals too much too soon. [`fbseqComputation` package](https://github.com/wlandau/fbseqComputation) reproduces the results of Section 5 ("Assessing computational tractability") of a paper entitled "A fully Bayesian strategy for high-dimensional hierarchical modeling using massively parallel computing" by Will Landau and Dr. Jarad Niemi. The goal is to assess the computational tractability of [`fbseq` package](https://github.com/wlandau/fbseq) and [`fbseqCUDA` package](https://github.com/wlandau/fbseqCUDA) using a real RNA-seq dataset [@paschold] and a simulation study based off this dataset. See the original paper for details.
+[`fbseqComputation` package](https://github.com/wlandau/fbseqComputation) is a smaller version of the [`fbseqStudies` package](https://github.com/wlandau/fbseqStudies) package, created becase [`fbseqStudies` package](https://github.com/wlandau/fbseqStudies) reveals too much too soon. [`fbseqComputation` package](https://github.com/wlandau/fbseqComputation) reproduces the results of Section 5 ("Assessing computational tractability") of a paper entitled "A fully Bayesian strategy for high-dimensional hierarchical modeling using massively parallel computing" by Will Landau and Dr. Jarad Niemi. The goal is to assess the computational tractability of [`fbseq` package](https://github.com/wlandau/fbseq) and [`fbseqCUDA` package](https://github.com/wlandau/fbseqCUDA) using a real RNA-seq dataset and a simulation study based off this dataset. See the original paper for details.
 
 # System requirements
 
